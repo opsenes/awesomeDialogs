@@ -9,7 +9,7 @@ class VerticalStackDialog extends StatelessWidget {
   final Widget body;
   final bool isDense;
   final AlignmentGeometry aligment;
-  final EdgeInsetsGeometry padding;
+  final EdgeInsetsGeometry contentPadding;
   const VerticalStackDialog({
     Key key,
     @required this.title,
@@ -20,7 +20,7 @@ class VerticalStackDialog extends StatelessWidget {
     this.aligment,
     this.isDense,
     @required this.header,
-    this.padding,
+    this.contentPadding,
   }) : super(key: key);
 
   @override
@@ -41,7 +41,7 @@ class VerticalStackDialog extends StatelessWidget {
               elevation: 0.5,
               color: Theme.of(context).cardColor,
               child: Container(
-                padding: padding,
+                padding: contentPadding,
                 width: MediaQuery.of(context).size.width,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,

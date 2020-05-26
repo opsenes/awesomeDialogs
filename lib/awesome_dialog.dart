@@ -1,10 +1,11 @@
 library awesome_dialog;
 
-import 'anims/anims.dart';
 import 'package:awesome_dialog/animated_button.dart';
 import 'package:awesome_dialog/anims/flare_header.dart';
 import 'package:awesome_dialog/vertical_stack_header_dialog.dart';
 import 'package:flutter/material.dart';
+
+import 'anims/anims.dart';
 
 enum DialogType { INFO, WARNING, ERROR, SUCCES }
 enum AnimType { SCALE, LEFTSLIDE, RIGHSLIDE, BOTTOMSLIDE, TOPSLIDE }
@@ -30,7 +31,7 @@ class AwesomeDialog {
   final Function onDissmissCallback;
   final AnimType animType;
   final AlignmentGeometry aligment;
-  final EdgeInsetsGeometry padding;
+  final EdgeInsetsGeometry contentPadding;
   final bool isDense;
   final bool headerAnimationLoop;
   final bool useRootNavigator;
@@ -57,7 +58,7 @@ class AwesomeDialog {
       this.headerAnimationLoop = true,
       this.aligment = Alignment.center,
       this.animType = AnimType.SCALE,
-      this.padding,
+      this.contentPadding,
       this.useRootNavigator = false})
       : assert(
           (dialogType != null || customHeader != null),
@@ -109,7 +110,7 @@ class AwesomeDialog {
       body: this.body,
       isDense: isDense,
       aligment: aligment,
-      padding: padding ?? EdgeInsets.only(left: 5, right: 5),
+      contentPadding: contentPadding ?? EdgeInsets.only(left: 5, right: 5),
       btnOk: btnOk ?? (btnOkOnPress != null ? _buildFancyButtonOk() : null),
       btnCancel: btnCancel ??
           (btnCancelOnPress != null ? _buildFancyButtonCancel() : null),
