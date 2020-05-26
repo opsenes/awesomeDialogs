@@ -132,6 +132,10 @@ class _HomePageState extends State<HomePage> {
               AnimatedButton(
                 text: 'Error Dialog',
                 color: Colors.red,
+                textStyle: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 20),
                 pressEvent: () {
                   AwesomeDialog(
                           context: context,

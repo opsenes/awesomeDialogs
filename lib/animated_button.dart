@@ -5,14 +5,19 @@ class AnimatedButton extends StatefulWidget {
   final String text;
   final IconData icon;
   final double width;
+  final double paddingVertical;
   final Color color;
+  final TextStyle textStyle;
 
-  const AnimatedButton(
+  AnimatedButton(
       {@required this.pressEvent,
       this.text,
       this.icon,
       this.color,
-      this.width = double.infinity});
+      this.width = double.infinity,
+      this.paddingVertical = 8.0,
+      this.textStyle = const TextStyle(
+          color: Colors.white, fontWeight: FontWeight.w700, fontSize: 16)});
   @override
   _AnimatedButtonState createState() => _AnimatedButtonState();
 }
@@ -74,7 +79,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
   }
 
   Widget get _animatedButtonUI => Container(
-        height: 50,
+        padding: EdgeInsets.symmetric(vertical: widget.paddingVertical),
         width: widget.width,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(100)),
@@ -89,14 +94,11 @@ class _AnimatedButtonState extends State<AnimatedButton>
                   )
                 : SizedBox(),
             SizedBox(
-              width: 5,
+              width: widget.icon != null ? 5 : 0,
             ),
             Text(
               '${widget.text}',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w700,
-                  fontSize: 16),
+              style: widget.textStyle,
             ),
           ],
         ),
