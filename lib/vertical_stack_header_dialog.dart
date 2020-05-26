@@ -8,7 +8,7 @@ class VerticalStackDialog extends StatelessWidget {
   final Widget header;
   final Widget body;
   final bool isDense;
-  final AlignmentGeometry aligment;
+  final AlignmentGeometry alignment;
   final EdgeInsetsGeometry contentPadding;
   const VerticalStackDialog({
     Key key,
@@ -17,7 +17,7 @@ class VerticalStackDialog extends StatelessWidget {
     this.btnOk,
     this.btnCancel,
     this.body,
-    this.aligment,
+    this.alignment,
     this.isDense,
     @required this.header,
     this.contentPadding,
@@ -26,7 +26,7 @@ class VerticalStackDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: aligment,
+      alignment: alignment,
       child: Stack(
         children: <Widget>[
           Container(

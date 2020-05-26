@@ -17,7 +17,7 @@
 ## [0.0.5] - 25/11/2019.
 
 * Added isDense property
-* Added aligment property
+* Added alignment property
 ## [0.0.4] - 18/11/2019.
 
 * Change default color to Theme.of(context).cardColor
