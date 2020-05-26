@@ -10,6 +10,7 @@ class VerticalStackDialog extends StatelessWidget {
   final bool isDense;
   final AlignmentGeometry alignment;
   final EdgeInsetsGeometry contentPadding;
+  final EdgeInsetsGeometry dialogPadding;
   const VerticalStackDialog({
     Key key,
     @required this.title,
@@ -21,6 +22,7 @@ class VerticalStackDialog extends StatelessWidget {
     this.isDense,
     @required this.header,
     this.contentPadding,
+    this.dialogPadding,
   }) : super(key: key);
 
   @override
@@ -32,7 +34,10 @@ class VerticalStackDialog extends StatelessWidget {
           Container(
             padding: isDense
                 ? EdgeInsets.only(
-                    top: 65.0, left: 15.0, right: 15.0, bottom: 10.0)
+                    top: 65.0,
+                    left: dialogPadding.horizontal,
+                    right: dialogPadding.horizontal,
+                    bottom: 10.0)
                 : EdgeInsets.only(
                     top: 65.0, left: 40.0, right: 40.0, bottom: 10.0),
             child: Material(

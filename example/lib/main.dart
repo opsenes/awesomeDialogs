@@ -207,6 +207,8 @@ class _HomePageState extends State<HomePage> {
                     AwesomeDialog(
                       context: context,
                       animType: AnimType.SCALE,
+                      isDense: true,
+                      dialogPadding: EdgeInsets.symmetric(horizontal: 50),
                       customHeader: Icon(
                         Icons.face,
                         size: 50,
@@ -215,7 +217,7 @@ class _HomePageState extends State<HomePage> {
                       tittle: 'This is Custom',
                       desc: 'This is custom button and header',
                       btnOk: AnimatedButton(
-                        width: 100,
+                        width: 200,
                         pressEvent: () {
                           Navigator.of(context).pop();
                         },
