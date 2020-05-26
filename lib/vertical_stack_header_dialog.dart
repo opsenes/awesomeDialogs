@@ -1,4 +1,3 @@
-import 'package:awesome_dialog/anims/anims.dart';
 import 'package:flutter/material.dart';
 
 class VerticalStackDialog extends StatelessWidget {
@@ -86,7 +85,7 @@ class VerticalStackDialog extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             btnCancel != null
-                                ? Expanded(
+                                ? Flexible(
                                     child: btnCancel ?? Container(),
                                   )
                                 : Container(),
@@ -96,7 +95,7 @@ class VerticalStackDialog extends StatelessWidget {
                                   )
                                 : Container(),
                             btnOk != null
-                                ? Expanded(
+                                ? Flexible(
                                     child: btnOk,
                                   )
                                 : Container(),
