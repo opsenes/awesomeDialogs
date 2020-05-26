@@ -214,11 +214,13 @@ class _HomePageState extends State<HomePage> {
 
                       tittle: 'This is Custom',
                       desc: 'This is custom button and header',
-                      btnOk: FlatButton(
-                        child: Text('Custom Button'),
-                        onPressed: () {
+                      btnOk: AnimatedButton(
+                        width: 100,
+                        pressEvent: () {
                           Navigator.of(context).pop();
                         },
+                        text: 'Custom Animated Button',
+                        color: Color(0xFF00CA71),
                       ),
                       //this is ignored
                       btnOkOnPress: () {},
