@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 
 import 'anims/anims.dart';
 
-enum DialogType { INFO, WARNING, ERROR, SUCCES }
-enum AnimType { SCALE, LEFTSLIDE, RIGHSLIDE, BOTTOMSLIDE, TOPSLIDE }
+enum DialogType { INFO, WARNING, ERROR, SUCCESS }
+enum AnimType { SCALE, LEFT_SLIDE, RIGHT_SLIDE, BOTTOM_SLIDE, TOP_SLIDE }
 
 class AwesomeDialog {
   final DialogType dialogType;
@@ -28,7 +28,7 @@ class AwesomeDialog {
   final Widget btnCancel;
   final Widget body;
   final bool dismissOnTouchOutside;
-  final Function onDissmissCallback;
+  final Function onDismissCallback;
   final AnimType animType;
   final AlignmentGeometry alignment;
   final EdgeInsetsGeometry contentPadding;
@@ -52,7 +52,7 @@ class AwesomeDialog {
       this.btnCancelIcon,
       this.btnCancelOnPress,
       this.btnCancelColor,
-      this.onDissmissCallback,
+      this.onDismissCallback,
       this.isDense = false,
       this.dismissOnTouchOutside = true,
       this.headerAnimationLoop = true,
@@ -78,23 +78,23 @@ class AwesomeDialog {
                   curve: Curves.fastLinearToSlowEaseIn,
                   child: _buildDialog());
               break;
-            case AnimType.LEFTSLIDE:
+            case AnimType.LEFT_SLIDE:
               return FadeIn(from: SlideFrom.LEFT, child: _buildDialog());
               break;
-            case AnimType.RIGHSLIDE:
+            case AnimType.RIGHT_SLIDE:
               return FadeIn(from: SlideFrom.RIGHT, child: _buildDialog());
               break;
-            case AnimType.BOTTOMSLIDE:
+            case AnimType.BOTTOM_SLIDE:
               return FadeIn(from: SlideFrom.BOTTOM, child: _buildDialog());
               break;
-            case AnimType.TOPSLIDE:
+            case AnimType.TOP_SLIDE:
               return FadeIn(from: SlideFrom.TOP, child: _buildDialog());
               break;
             default:
               return _buildDialog();
           }
         }).then((_) {
-      if (onDissmissCallback != null) onDissmissCallback();
+      if (onDismissCallback != null) onDismissCallback();
     });
   }
 
@@ -141,7 +141,7 @@ class AwesomeDialog {
     );
   }
 
-  dissmiss() {
+  dismiss() {
     Navigator.of(context, rootNavigator: useRootNavigator).pop();
   }
 }

@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
       DialogType dialogType, BuildContext context, VoidCallback onOkPress) {
     AwesomeDialog(
       context: context,
-      animType: AnimType.TOPSLIDE,
+      animType: AnimType.TOP_SLIDE,
       dialogType: dialogType,
       tittle: title,
       desc: msg,
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                     showAlertDialogOnOkCallback(
                         'Verified',
                         'Sign In Success!, prees Ok to navigate.',
-                        DialogType.SUCCES,
+                        DialogType.SUCCESS,
                         context,
                         () => _slideMainPage(context));
                   },
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                             context: context,
                             headerAnimationLoop: false,
                             dialogType: DialogType.INFO,
-                            animType: AnimType.BOTTOMSLIDE,
+                            animType: AnimType.BOTTOM_SLIDE,
                             tittle: 'INFO',
                             desc:
                                 'Dialog description here..................................................',
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                       context: context,
                       headerAnimationLoop: false,
                       dialogType: DialogType.INFO,
-                      animType: AnimType.BOTTOMSLIDE,
+                      animType: AnimType.BOTTOM_SLIDE,
                       tittle: 'INFO',
                       desc: 'Dialog de.',
                     ).show();
@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                             context: context,
                             dialogType: DialogType.WARNING,
                             headerAnimationLoop: false,
-                            animType: AnimType.TOPSLIDE,
+                            animType: AnimType.TOP_SLIDE,
                             tittle: 'Warning',
                             desc:
                                 'Dialog description here..................................................',
@@ -141,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                     AwesomeDialog(
                             context: context,
                             dialogType: DialogType.ERROR,
-                            animType: AnimType.RIGHSLIDE,
+                            animType: AnimType.RIGHT_SLIDE,
                             headerAnimationLoop: false,
                             tittle: 'Error',
                             desc:
@@ -160,9 +160,9 @@ class _HomePageState extends State<HomePage> {
                   pressEvent: () {
                     AwesomeDialog(
                         context: context,
-                        animType: AnimType.LEFTSLIDE,
+                        animType: AnimType.LEFT_SLIDE,
                         headerAnimationLoop: false,
-                        dialogType: DialogType.SUCCES,
+                        dialogType: DialogType.SUCCESS,
                         tittle: 'Succes',
                         desc:
                             'Dialog description here..................................................',
@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                           debugPrint('OnClcik');
                         },
                         btnOkIcon: Icons.check_circle,
-                        onDissmissCallback: () {
+                        onDismissCallback: () {
                           debugPrint('Dialog Dissmiss from callback');
                         }).show();
                   },
