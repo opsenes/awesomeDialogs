@@ -36,6 +36,7 @@ class AwesomeDialog {
   final bool isDense;
   final bool headerAnimationLoop;
   final bool useRootNavigator;
+
   AwesomeDialog(
       {@required this.context,
       this.dialogType,
@@ -101,22 +102,26 @@ class AwesomeDialog {
   }
 
   _buildDialog() {
-    return VerticalStackDialog(
-      header: customHeader ??
-          FlareHeader(
-            loop: headerAnimationLoop,
-            dialogType: this.dialogType,
-          ),
-      title: this.tittle,
-      desc: this.desc,
-      body: this.body,
-      isDense: isDense,
-      alignment: alignment,
-      dialogPadding: dialogPadding,
-      contentPadding: contentPadding ?? EdgeInsets.only(left: 5, right: 5),
-      btnOk: btnOk ?? (btnOkOnPress != null ? _buildFancyButtonOk() : null),
-      btnCancel: btnCancel ??
-          (btnCancelOnPress != null ? _buildFancyButtonCancel() : null),
+    return StatefulBuilder(
+      builder: (context, setState) {
+        return VerticalStackDialog(
+          header: customHeader ??
+              FlareHeader(
+                loop: headerAnimationLoop,
+                dialogType: this.dialogType,
+              ),
+          title: this.tittle,
+          desc: this.desc,
+          body: this.body,
+          isDense: isDense,
+          alignment: alignment,
+          dialogPadding: dialogPadding,
+          contentPadding: contentPadding ?? EdgeInsets.only(left: 5, right: 5),
+          btnOk: btnOk ?? (btnOkOnPress != null ? _buildFancyButtonOk() : null),
+          btnCancel: btnCancel ??
+              (btnCancelOnPress != null ? _buildFancyButtonCancel() : null),
+        );
+      },
     );
   }
 
